@@ -1,28 +1,16 @@
 {
-  "logs" : {
-    "-KVAMnCdHvHCv7KjPMNB" : {
-      "tempo" : 1477659538279,
+  "borbamartim-cd-351f6" : {
+    "-KVW-iwn4vJmfn10FHiR" : {
+      "tempo" : 1478022590256,
       "tipo" : "inicio",
-      "user_id" : 947912844,
+      "user_id" : 1355150594,
       "versao" : "A"
     },
-    "-KVAMvBHr_MJAn_oUJhv" : {
-      "tempo" : 1477659571047,
+    "-KVW-nh9QziWKgOfywOg" : {
+      "tempo" : 1478022603004,
       "tipo" : "final",
-      "user_id" : 947912844,
+      "user_id" : 1355150594,
       "versao" : "A"
-    },
-    "-KVANG40oYBdzvFqO2Lh" : {
-      "tempo" : 1477659660710,
-      "tipo" : "inicio",
-      "user_id" : 947912844,
-      "versao" : "B"
-    },
-    "-KVANK63iT-_vtI2NO0f" : {
-      "tempo" : 1477659677226,
-      "tipo" : "final",
-      "user_id" : 947912844,
-      "versao" : "B"
     }
   }
 }

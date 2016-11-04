@@ -1,17 +1,17 @@
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBg8FLM_Lg", // Use sua própria API Key
-    authDomain: "teste-ab.firebaseapp.com",
-    databaseURL: "https://teste-ab.firebaseio.com",
-    storageBucket: "teste-ab.appspot.com",
-    messagingSenderId: "313208609268"
+    apiKey: "AIzaSyBl1CQhjAOZZkiirBJxeqbKJE2qUOjO0Hc",
+    authDomain: "borbamartim-cd-351f6.firebaseapp.com",
+    databaseURL: "https://borbamartim-cd-351f6.firebaseio.com",
+    storageBucket: "borbamartim-cd-351f6.appspot.com",
+    messagingSenderId: "294439374886"
   };
   firebase.initializeApp(config);
 
   database = firebase.database();
 
-  logs = this.database.ref('logs');
+  logs = this.database.ref('borbamartim-cd-351f6');
 
  function envia(tipo_evt, user_id_var, tempo_var, versao_var){
   this.logs.push(
@@ -31,4 +31,3 @@ function tempo_inicial(){
   // enviar para Firebase
   envia("inicio", id_pessoa, d, versao);
 }
-
