@@ -1,103 +1,515 @@
 <!DOCTYPE html>
-<html>
-  <head> 
-  <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js" >
-  </script>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototyper</title>
+<meta name="description" content="">
+<meta name="author" content="Martim Ferreira José">
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
 
-  <script>
-  versao = "B"
-
-  </script>
-
-  <script src="scripts/main.js"></script>
 <script>
+versao = "B"
 
-    function verify(){
+</script>
 
-      // definir critério se usuário terminou
+<script src="scripts/main.js"></script>
 
-      var ok = 0;
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
 
-      if (document.getElementById("dog1").checked && document.getElementById("dog2").checked && document.getElementById("dog3").checked && document.getElementById("dog4").checked && document.getElementById("dog5").checked && document.getElementById("dog6").checked && document.getElementById("dog7").checked && document.getElementById("dog8").checked == true){
-        ok = 1;
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
 
-      }
-
-
-      if (ok == 1){
-        // se terminou, gravar tempo final
-
-        // redirecionar para página de agradecimentos
-        envia("final", id_pessoa, Date.now(), versao);
-
-        window.location.replace("agradecimento.html");
-
-      } else {
-        alert("Ainda falta selecionar um cão!");
-      }
-
-
-    }
-
-
-    </script>
-    <meta charset="utf-8">
-    <title>Welcome to Firebase Hosting</title>
-    <style media="screen">
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
-      }
-
-      a {
-        color: rgb(3,155,229);
-      }
-
-
-    #button_div {
-
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50; /* Green */      
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    }
-
-    </style>
-  </head>
-  <body onload="tempo_inicial();">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload="tempo_inicial();">
       <script src="client.min.js"></script>
       <script>
         var client = new ClientJS();
 
         var id_pessoa = client.getFingerprint();
+      </script>
+<div id="preloader">
+  <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
+</div>
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+      <a class="navbar-brand page-scroll" href="#page-top"> <i class="fa fa-cogs"></i> Prototyper</a> </div>
 
-      </script>  
-    
-    <div>
-      <table>
-<tr><td><input type="checkbox" id="cat1"> </td><td><img src="img/cat1.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="cat2"> </td><td><img src="img/cat2.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="cat3"> </td><td><img src="img/cat3.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="cat4"> </td><td><img src="img/cat4.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="cat5"> </td><td><img src="img/cat5.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="cat6"> </td><td><img src="img/cat6.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="cat7"> </td><td><img src="img/cat7.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="dog1"> </td><td><img src="img/dog1.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="dog2"> </td><td><img src="img/dog2.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="dog3"> </td><td><img src="img/dog3.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="dog4"> </td><td><img src="img/dog4.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="dog5"> </td><td><img src="img/dog5.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="dog6"> </td><td><img src="img/dog6.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="dog7"> </td><td><img src="img/dog7.jpeg" width=80 height=80></td></tr>
-<tr><td><input type="checkbox" id="dog8"> </td><td><img src="img/dog8.jpeg" width=80 height=80></td></tr>
-
-</table>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+        <li class="hidden"> <a href="#page-top"></a> </li>
+        <li> <a class="page-scroll" href="#works">Projetos</a> </li>
+        <li> <a class="page-scroll" href="#about">Sobre</a> </li>
+        <li> <a class="page-scroll" href="#contact">Contato</a> </li>
+      </ul>
     </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
 
-
-    <div id="button_div">
-      <button onclick="verify();">Terminei!</button>
+<!-- Header -->
+<div id="intro">
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h1><span class="brand-heading">Prototyper</span></h1>
+          <p class="intro-text">Eletrônica • Programação • Simulações • Artigos • Empreendedorismo</p>
+          <a href="#works" class="btn btn-default page-scroll">Veja os projetos!</a> </div>
+      </div>
     </div>
-  </body>
+  </div>
+</div>
+
+<!-- Portfolio Section -->
+<div id="works">
+  <div class="container"> <!-- Container -->
+    <div class="section-title text-center center">
+      <h2>Projetos</h2>
+      <hr>
+      <div class="clearfix"></div>
+    </div>
+    <div class="categories">
+      <ul class="cat">
+        <li>
+          <ol class="type">
+            <li><a href="#" data-filter="*" class="active">Tudo</a></li>
+            <li><a href="#" data-filter=".eletronic">Eletrônica</a></li>
+            <li><a href="#" data-filter=".programming">Programação</a></li>
+            <li><a href="#" data-filter=".simulations">Simulações</a></li>
+            <li><a href="#" data-filter=".artigos">Artigos</a></li>
+            <li><a href="#" data-filter=".design">Design</a></li>
+          </ol>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 eletronic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Sistema de Aquecimento de um Chuveiro Elétrico</h4>
+                <p>Eletrônica</p>
+              </div>
+              <img src="img/portfolio/chuveiroinstrumed.png" class="img-responsive" alt="Sistema de Aquecimento de um Chuveiro Elétrico"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 eletronic simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Rede de Distribuição de Petróleo</h4>
+                <p>Eletrônica, Simulações</p>
+              </div>
+              <img src="img/portfolio/petroinstrumed.png" class="img-responsive" alt="Rede de Distribuição de Petróleo"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 eletronic simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Termômetro de Resistência</h4>
+                <p>Eletrônica</p>
+              </div>
+              <img src="img/portfolio/trintrumed.png" class="img-responsive" alt="Rede de Distribuição de Petróleo"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 eletronic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Estação Meteorológica</h4>
+                <p>Eletrônica</p>
+              </div>
+              <img src="img/portfolio/estacaoinstrumed.png" class="img-responsive" alt="Estação Meteorológica"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 eletronic simulations ">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Escada Magirus</h4>
+                <p>Eletrônica, Simulações</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Escada Magirus"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 eletronic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Circuito Amplificador de Áudio</h4>
+                <p>Eletrônica</p>
+              </div>
+              <img src="img/portfolio/ampopacionamentos.png" class="img-responsive" alt="Circuito Amplificador de Áudio"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 eletronic">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Acionamento PWM com Eletrônica Analógica ou Filtro</h4>
+                <p>Eletrônica</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Acionamento PWM com Eletrônica Analógica ou Filtro"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 programming">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Cálculo de Conceito</h4>
+                <p>Programação</p>
+              </div>
+              <img src="img/portfolio/conceitosoft.png" class="img-responsive" alt="Cálculo de Conceito"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 programming">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>CRUD</h4>
+                <p>Programação</p>
+              </div>
+              <img src="img/portfolio/crudsoft.png" class="img-responsive" alt="CRUD"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 programming">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Jogo da Velha</h4>
+                <p>Programação</p>
+              </div>
+              <img src="img/portfolio/velhasoft.png" class="img-responsive" alt="Jogo da Velha"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 programming">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Integrator</h4>
+                <p>Programação</p>
+              </div>
+              <img src="img/portfolio/integratorsoft.png" class="img-responsive" alt="Integrator"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 programming design">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Prototyper</h4>
+                <p>Programação, Design</p>
+              </div>
+              <img src="img/portfolio/prototypercod.jpg" class="img-responsive" alt="Prototyper"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 programming design">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Aplicativo para porteiros</h4>
+                <p>Programação, Design</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Aplicativo para porteiros"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Dinâmica Populacional</h4>
+                <p>Simulações</p>
+              </div>
+              <img src="img/portfolio/p1modsim.png" class="img-responsive" alt="Dinâmica Populacional"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Os limites e efeitos do álcool no corpo humano</h4>
+                <p>Simulações</p>
+              </div>
+              <img src="img/portfolio/p2modsim.png" class="img-responsive" alt="Os limites e efeitos do álcool no corpo humano"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Como um evacuar um arranha-céu sem utilizar energia elétrica </h4>
+                <p>Simulações</p>
+              </div>
+              <img src="img/portfolio/p3modsim.jpg" class="img-responsive" alt="Como um evacuar um arranha-céu sem utilizar energia elétrica"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Análise Exploratória</h4>
+                <p>Simulações</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Análise Exploratória"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 simulations programming">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Comparação de Interfaces</h4>
+                <p>Simulações, Programação</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Comparação de Interfaces"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Modelos de Regressão</h4>
+                <p>Simulações</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Modelos de Regressão"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Ajuste de Modelo Teórico</h4>
+                <p>Simulações</p>
+              </div>
+              <img src="img/portfolio/modelo.png" class="img-responsive" alt="Ajuste de Modelo Teórico"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 simulations">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Teorema do Limite Central</h4>
+                <p>Simulações</p>
+              </div>
+              <img src="img/portfolio/limite.png" class="img-responsive" alt="Teorema do Limite Central</"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 artigos">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Primeiro Artigo</h4>
+                <p>Artigos</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Primeiro Artigo"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 artigos">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Segundo Artigo</h4>
+                <p>Artigos</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Segundo Artigo"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 artigos">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Application do Singularity</h4>
+                <p>Artigos</p>
+              </div>
+              <img src="img/portfolio/placeholder.png" class="img-responsive" alt="Application do Singularity"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 artigos">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="matvar_b.html">
+              <div class="hover-text">
+                <h4>Técnicas de Primitivação: Integral por partes e por fraçòes parciais</h4>
+                <p>Artigos</p>
+              </div>
+              <img src="img/portfolio/matvar.png" class="img-responsive" alt="Técnicas de Primitivação: Integral por partes e por fraçòes parciais"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 artigos">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Contemporaneidade Matemática</h4>
+                <p>Artigos</p>
+              </div>
+              <img src="img/portfolio/fisica.png" class="img-responsive" alt="Contemporaneidade Matemática"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 design">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Suricator</h4>
+                <p>Design</p>
+              </div>
+              <img src="img/portfolio/suricats.jpg" class="img-responsive" alt="Suricator"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 design">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="projeto.html">
+              <div class="hover-text">
+                <h4>Barata Elétrica</h4>
+                <p>Design</p>
+              </div>
+              <img src="img/portfolio/barata.jpg" class="img-responsive" alt="Barata Elétrica"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2>Sobre mim</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><img src="img/about.jpg" class="img-responsive"></div>
+      <div class="col-md-4">
+        <div class="about-text">
+          <h4>Sobre mim</h4>
+          <p>Sou apaixonado por hardware, programação, tecnologia e games. Estou no segundo semestre, da segunda turma de Engenharia da Computação do Insper.</p>
+          <p>Gosto de fuçar e desmontar as coisas, porque saber como as coisas funcionam é o melhor jeito de aprender. </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="about-text">
+          <h4>O que eu faço</h4>
+          <p>Sendo engenheiro do Insper, caracterizo-me por minha orientação empreendedora, voltada à identificação e solução de demandas da sociedade, através do emprego de tecnologias existentes e do desenvolvimento de novas tecnologias. Portanto, minha capacidade de realizar e de inovar está aliada à compreensão do contexto social em que estou inserido. </p>
+          <ul>
+            <li>Conhecimento Técnico</li>
+            <li>Habilidades de Design</li>
+            <li>Habilidades Empreendedoras</li>
+            <li>Consciência do Contexto</li>
+            <li>Habilidades de Relacionamento Interpessoal</li>
+            <li>Habilidade de Aprender a Aprender</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Entre em contato</h2>
+      <hr>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Nome" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Mensagem" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-default btn-lg">Enviar mensagem</button>
+      </form>
+      <div class="social">
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-github"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container">
+    <p>Copyright &copy; Modus. Designed by <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a></p>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/SmoothScroll.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/jquery.parallax.js"></script>
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="js/contact_me.js"></script>
+
+<!-- Javascripts
+    ================================================== -->
+<script type="text/javascript" src="js/main.js"></script>
+</body>
 </html>

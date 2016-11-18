@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototyper</title>
+<meta name="description" content="">
+<meta name="author" content="Martim Ferreira José">
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+<script src="scripts/main.js"></script>
+
+<script>
+
+    function verify(){
+        envia("final", id_pessoa, Date.now(), "A");
+        window.location.replace("agradecimento.html");
+
+}
+</script>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <script src="client.min.js"></script>
+  <script>
+    var client = new ClientJS();
+
+    var id_pessoa = client.getFingerprint();
+  </script>
+<div id="preloader">
+  <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
+</div>
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+      <a class="navbar-brand page-scroll" href="index2.html#page-top"> <i class="fa fa-cogs"></i> Prototyper</a> </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+        <li class="hidden"> <a href="index2.html#page-top"></a> </li>
+        <li> <a class="page-scroll" href="index2.html#about">Sobre</a> </li>
+        <li> <a class="page-scroll" href="index2.html#works">Projetos</a> </li>
+        <li> <a class="page-scroll" href="index2.html#contact">Contato</a> </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+
+<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="section-title text-center center">
+      <h2>Técnicas de Primitivação: Integral por partes e por frações parciais</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><img src="img/portfolio/matvar.png" class="img-responsive"></div>
+      <div class="col-md-4">
+        <div class="about-text">
+          <h4>Descrição</h4>
+          <p>Neste projeto, foi desenvolvido o aspecto de aprender a aprender matemática, desenvolvendo a autonomia, em relação ao conhecimento matemático.</p>
+          <br>
+          <p>Após estudar o assunto profundamente, foi elaborado um cartaz, que foi apresentado para professores e colegas. Também foi feito um artigo que mostrava o contexto em que as técnicas de primitivação podem ser aplicadas.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="about-text">
+          <h4>Detalhes</h4>
+          <ul>
+            <li><b>Matéria:</b> Matemática da Variação (Segundo Semestre)</li>
+            <li><b>Duração:</b> 4 semanas (21/09 - 26/10)</li>
+            <li><b>Tipo de Projeto:</b> Cartaz, Apresentação, Artigo</li>
+            <li><b>Palavras-chave:</b> Cálculo Integral, Técnicas de Primitivação</li>
+            <li><b>Projetos Relacionados: </b> - </li>
+            <li><b>Veja o projeto:</b> Artigo - Cartaz</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <button class="btn btn-default page-scroll" onclick="verify();">Achei!</button>
+      <div class="social">
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-github"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container">
+    <p>Copyright &copy; Modus. Designed by <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a></p>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/SmoothScroll.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/jquery.parallax.js"></script>
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="js/contact_me.js"></script>
+
+<!-- Javascripts
+    ================================================== -->
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
